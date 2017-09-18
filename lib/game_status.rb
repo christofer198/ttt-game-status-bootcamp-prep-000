@@ -25,20 +25,18 @@ def won?(board)
 
 		if board[awin[0]] == "X" && board[awin[1]] == "X" && board[awin[2]] == "X"
 			return awin
-     		break
+     	break
 		elsif board[awin[0]] == "O" && board[awin[1]] == "O" && board[awin[2]] == "O"
 			return awin
-     		break
+     	break
 		end
 
     count += 1
-
   end
 
 	if count == 8
 		return false
 	end
-
 end
 
 def full?(board)
@@ -59,6 +57,15 @@ end
 def draw?(board)
 
   if full?(board) == true && won?(board) == false
+    return true
+  else
+    return false
+  end
+end
+
+def over?(board)
+
+  if draw?(board) == true || full?(board) == true || won?(board) != false
     return true
   else
     return false
