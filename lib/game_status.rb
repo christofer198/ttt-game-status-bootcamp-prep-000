@@ -24,10 +24,10 @@ def won?(board)
 	WIN_COMBINATIONS.each do |awin|
 
 		if board[awin[0]] == "X" && board[awin[1]] == "X" && board[awin[2]] == "X"
-			return awin, "X"
+			return awin
      	break
 		elsif board[awin[0]] == "O" && board[awin[1]] == "O" && board[awin[2]] == "O"
-			return awin, "O"
+			return awin
      	break
 		end
 
@@ -74,10 +74,14 @@ end
 
 def winner(board)
 
-  if won?(board) == "X"
-    return "X"
-  elsif won?(board) == "O"
-    return "O"
+  if won?(board) != false
+
+    if board[won?(board)[0]] == "X"
+      return "X"
+    elsif board[won?(board)[0]] == "O"
+      return "O"
+    end
+    
   else
     return nil
   end
