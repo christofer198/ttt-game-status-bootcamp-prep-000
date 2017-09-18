@@ -30,7 +30,6 @@ def won?(board)
 			return awin
      	break
 		end
-
     count += 1
   end
 
@@ -40,7 +39,9 @@ def won?(board)
 end
 
 def full?(board)
+
   count = 0
+
   board.each do |x|
     if x == "X" || x == "O"
       count += 1
@@ -81,7 +82,7 @@ def winner(board)
     elsif board[won?(board)[0]] == "O"
       return "O"
     end
-    
+
   else
     return nil
   end
